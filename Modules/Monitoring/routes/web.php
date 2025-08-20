@@ -8,13 +8,20 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 
-Route::prefix('/admin')->group(function () {
-    Route::get('monitoring', [MonitoringController::class, 'index'])
-        ->name('masterlocation.index');
-    Route::post('monitoring', [MonitoringController::class, 'store'])
-        ->name('masterlocation.store');
-    Route::put('monitoring/{id}', [MonitoringController::class, 'update'])
-        ->name('masterlocation.update');
-    Route::delete('monitoring/{id}', [MonitoringController::class, 'destroy'])
-        ->name('masterlocation.destroy');
+// Route::prefix('/admin')->group(function () {
+//     Route::get('monitoring', [MonitoringController::class, 'index'])
+//         ->name('monitoring.index');
+//     Route::post('monitoring', [MonitoringController::class, 'store'])
+//         ->name('monitoring.store');
+//     Route::put('monitoring/{id}', [MonitoringController::class, 'update'])
+//         ->name('monitoring.update');
+//     Route::delete('monitoring/{id}', [MonitoringController::class, 'destroy'])
+//         ->name('monitoring.destroy');
+// });
+
+Route::prefix('admin')->group(function () {
+    Route::get('monitoring', [MonitoringController::class, 'index'])->name('monitoring.index');
+    Route::post('monitoring', [MonitoringController::class, 'store'])->name('monitoring.store');
+    Route::put('monitoring/{id}', [MonitoringController::class, 'update'])->name('monitoring.update');
+    Route::delete('monitoring/{id}', [MonitoringController::class, 'destroy'])->name('monitoring.destroy');
 });

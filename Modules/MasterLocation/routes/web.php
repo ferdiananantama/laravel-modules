@@ -14,13 +14,22 @@ Route::middleware(['auth', 'verified'])->group(function () {
 // });
 
 
-Route::prefix('/admin')->group(function () {
-    Route::get('master-location', [MasterLocationController::class, 'index'])
-        ->name('masterlocation.index');
-    Route::post('master-location', [MasterLocationController::class, 'store'])
-        ->name('masterlocation.store');
-    Route::put('master-location/{id}', [MasterLocationController::class, 'update'])
-        ->name('masterlocation.update');
-    Route::delete('master-location/{id}', [MasterLocationController::class, 'destroy'])
-        ->name('masterlocation.destroy');
+// Route::prefix('/admin')->group(function () {
+//     Route::get('master-location', [MasterLocationController::class, 'index'])
+//         ->name('masterlocation.index');
+//     Route::prefix('admin')->group(function () {
+//         Route::post('master-location', [MasterLocationController::class, 'store'])->name('masterlocation.store');
+//     });
+
+//     Route::put('master-location/{id}', [MasterLocationController::class, 'update'])
+//         ->name('masterlocation.update');
+//     Route::delete('master-location/{id}', [MasterLocationController::class, 'destroy'])
+//         ->name('masterlocation.destroy');
+// });
+
+Route::prefix('admin')->group(function () {
+    Route::get('master-location', [MasterLocationController::class, 'index'])->name('masterlocation.index');
+    Route::post('master-location', [MasterLocationController::class, 'store'])->name('masterlocation.store');
+    Route::put('master-location/{id}', [MasterLocationController::class, 'update'])->name('masterlocation.update');
+    Route::delete('master-location/{id}', [MasterLocationController::class, 'destroy'])->name('masterlocation.destroy');
 });

@@ -16,8 +16,8 @@ class MasterLocation extends Model
     protected $table = 'master_locations';
     protected $fillable = ['name'];
 
-    // protected static function newFactory(): MasterLocationFactory
-    // {
-    //     // return MasterLocationFactory::new();
-    // }
+    public function monitorings()
+    {
+        return $this->hasMany(\Modules\Monitoring\Models\Monitoring::class, 'location_id');
+    }
 }

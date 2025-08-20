@@ -8,9 +8,6 @@ use Modules\MasterLocation\Models\MasterLocation;
 
 class MasterLocationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index(Request $request)
     {
         // $user = session('user');
@@ -26,14 +23,18 @@ class MasterLocationController extends Controller
         return view('masterlocation::index', compact('locations'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function store(Request $request)
     {
-        $request->validate(['name' => 'required']);
+        // $request->validate(['name' => 'required']);
+
+        $request->validate([
+            'name' => 'required|string|max:255|unique:master_locations,name',
+        ]);
+
         MasterLocation::create($request->only('name'));
-        return redirect()->back()->with('success', 'Location added successfully.');
+        return redirect()->route('masterlocation.index')
+            ->with('success', 'Location added successfully');
     }
 
     public function update(Request $request, $id)
