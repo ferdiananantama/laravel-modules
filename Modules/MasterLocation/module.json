@@ -1,0 +1,11 @@
+{
+    "name": "MasterLocation",
+    "alias": "masterlocation",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\MasterLocation\\Providers\\MasterLocationServiceProvider"
+    ],
+    "files": []
+}
