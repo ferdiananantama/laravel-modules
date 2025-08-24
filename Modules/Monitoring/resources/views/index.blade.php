@@ -44,13 +44,29 @@
                 }, 1000);
             });
         </script>
-        <form class="mb-3">
-            <div class="input-group">
-                <input type="text" name="search" value="{{ request('search') }}" class="form-control"
-                    placeholder="Search location...">
-                <button class="btn btn-primary" type="submit">Search</button>
+        <!-- ✅ Filter, Search, Download & Upload -->
+        <div class="d-flex justify-content-between mb-3">
+            <form method="GET" action="{{ route('monitoring.index') }}" class="d-flex gap-2">
+                <input type="text" name="search" class="form-control" placeholder="Search shift / location..."
+                    value="{{ request('search') }}">
+                <input type="date" name="date" class="form-control" value="{{ request('date') }}">
+                <button class="btn btn-primary">Filter</button>
+                <a href="{{ route('monitoring.index') }}" class="btn btn-secondary">Reset</a>
+            </form>
+
+            <div class="d-flex gap-2">
+                <a href="{{ route('monitoring.export', ['date' => request('date')]) }}" class="btn btn-success">
+                    Download Excel
+                </a>
+                <form action="{{ route('monitoring.import') }}" method="POST" enctype="multipart/form-data"
+                    class="d-flex gap-2">
+                    @csrf
+                    <input type="file" name="file" class="form-control" required>
+                    <button type="submit" class="btn btn-warning">Upload Excel</button>
+                </form>
             </div>
-        </form>
+        </div>
+
         <table class="table table-bordered table-striped">
             <thead class="table-dark">
                 <tr>

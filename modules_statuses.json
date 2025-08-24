@@ -1,5 +1,7 @@
 {
     "Auth": true,
     "MasterLocation": true,
-    "Monitoring": true
+    "Monitoring": true,
+    "Hours": true,
+    "TimeSheet": true
 }

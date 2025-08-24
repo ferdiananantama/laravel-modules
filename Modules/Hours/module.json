@@ -1,0 +1,11 @@
+{
+    "name": "Hours",
+    "alias": "hours",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Hours\\Providers\\HoursServiceProvider"
+    ],
+    "files": []
+}

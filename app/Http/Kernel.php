@@ -14,8 +14,7 @@ class Kernel extends HttpKernel
     protected $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-
-        // ✅ middleware custom kamu
+        'redirect.to.auth' => \App\Http\Middleware\RedirectToAuth::class, // ✅ alias middleware
         'auth.session' => \App\Http\Middleware\CheckLogin::class,
     ];
 }

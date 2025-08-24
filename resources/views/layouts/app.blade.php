@@ -89,6 +89,14 @@
     <!-- apexcharts -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css"
         integrity="sha256-4MX+61mt9NVvvuPjUWdUdyfZfxSB1/Rf9WtqRHgG5S0=" crossorigin="anonymous" />
+
+    <!-- Jspreadsheet -->
+    <link rel="stylesheet" href="https://jspreadsheet.com/v9/jspreadsheet.css" />
+    <script src="https://jspreadsheet.com/v9/jspreadsheet.js"></script>
+
+    <!-- JSuites (dependency Jspreadsheet) -->
+    <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" />
+    <script src="https://jsuites.net/v4/jsuites.js"></script>
 </head>
 <!--end::Head-->
 <!--begin::Body-->
